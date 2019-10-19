@@ -1,1 +1,3 @@
 # trivia-game # trivia-game
+## Welcome!
+### In this trivia game, there are 10 multiple choice questions. You will have 30 seconds to answer each question, and the timer will start once you click the question drop-down buttons(i.e. Question 1, Question 2, etc.). As you answer each question, your results will be stored and displayed to you. In order to pass, you will need to answer 8 or more questions correctly! Once you complete the game, a pop-up will return your results!
