@@ -21,7 +21,7 @@ body {
     line-height: 1.5em;
     text-align: center;
     margin: 0 auto;
-    /* height: 721px; */
+    min-height: 721px;
     overflow: auto;
     display: block;
 }
@@ -47,6 +47,7 @@ header {
     height: 100%;
     box-sizing: border-box;
     max-width: 62.5%;
+    min-height: 721px;
 }
 
 /* Main Content */
@@ -125,6 +126,10 @@ header {
     position: relative;
     width: 100%;
     z-index: 1;
+}
+
+#btn10 {
+    margin-bottom: 15px;
 }
 
 /* .question button:hover {

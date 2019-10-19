@@ -77,10 +77,12 @@ $(document).ready(function() {
         $(".q-1").html(triviaQuestion[0].question);
         $("#mult-choice-1").empty()
         for (i = 0; i < triviaQuestion[0].multipleChoice.length; i ++) {
-            $("#mult-choice-1").append("<br/>" + triviaQuestion[0].multipleChoice[i])
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[0].multipleChoice[i]);
+            $("#mult-choice-1").append(choiceButton);
+            // $("#mult-choice-1").append(triviaQuestion[0].multipleChoice[i] + "<br/>")
         }
         $(".q1-content").toggle()
-        console.log(triviaQuestion[0]);
     });
 
     $("#btn2").on("click", function() {
@@ -88,7 +90,7 @@ $(document).ready(function() {
         $(".q-2").html(triviaQuestion[1].question);
         $("#mult-choice-2").empty()
         for (i = 0; i < triviaQuestion[1].multipleChoice.length; i ++) {
-            $("#mult-choice-2").append("<br/>" + triviaQuestion[1].multipleChoice[i])
+            $("#mult-choice-2").append(triviaQuestion[1].multipleChoice[i] + "<br/>")
         }
         $(".q2-content").toggle()
     });
@@ -98,7 +100,7 @@ $(document).ready(function() {
         $(".q-3").html(triviaQuestion[2].question);
         $("#mult-choice-3").empty()
         for (i = 0; i < triviaQuestion[2].multipleChoice.length; i ++) {
-            $("#mult-choice-3").append("<br/>" + triviaQuestion[2].multipleChoice[i])
+            $("#mult-choice-3").append(triviaQuestion[2].multipleChoice[i] + "<br/>")
         }
         $(".q3-content").toggle()
     });
@@ -108,7 +110,7 @@ $(document).ready(function() {
         $(".q-4").html(triviaQuestion[3].question);
         $("#mult-choice-4").empty()
         for (i = 0; i < triviaQuestion[3].multipleChoice.length; i ++) {
-            $("#mult-choice-4").append("<br/>" + triviaQuestion[3].multipleChoice[i])
+            $("#mult-choice-4").append(triviaQuestion[3].multipleChoice[i] + "<br/>")
         }
         $(".q4-content").toggle()
     });
@@ -118,7 +120,7 @@ $(document).ready(function() {
         $(".q-5").html(triviaQuestion[4].question);
         $("#mult-choice-5").empty()
         for (i = 0; i < triviaQuestion[4].multipleChoice.length; i ++) {
-            $("#mult-choice-5").append("<br/>" + triviaQuestion[4].multipleChoice[i])
+            $("#mult-choice-5").append(triviaQuestion[4].multipleChoice[i] + "<br/>")
         }
         $(".q5-content").toggle()
     });
@@ -128,7 +130,7 @@ $(document).ready(function() {
         $(".q-6").html(triviaQuestion[5].question);
         $("#mult-choice-6").empty()
         for (i = 0; i < triviaQuestion[5].multipleChoice.length; i ++) {
-            $("#mult-choice-6").append("<br/>" + triviaQuestion[5].multipleChoice[i])
+            $("#mult-choice-6").append(triviaQuestion[5].multipleChoice[i] + "<br/>")
         }
         $(".q6-content").toggle()
         console.log(triviaQuestion[5]);
@@ -139,7 +141,7 @@ $(document).ready(function() {
         $(".q-7").html(triviaQuestion[6].question);
         $("#mult-choice-7").empty()
         for (i = 0; i < triviaQuestion[6].multipleChoice.length; i ++) {
-            $("#mult-choice-7").append("<br/>" + triviaQuestion[6].multipleChoice[i])
+            $("#mult-choice-7").append(triviaQuestion[6].multipleChoice[i] + "<br/>")
         }
         $("q7-content").toggle()
         console.log(triviaQuestion[6]);
@@ -150,7 +152,7 @@ $(document).ready(function() {
         $("q-8").html(triviaQuestion[7].question);
         $("#mult-choice-8").empty()
         for (i = 0; i < triviaQuestion[7].multipleChoice.length; i ++) {
-            $("#mult-choice-8").append("<br/>" + triviaQuestion[7].multipleChoice[i])
+            $("#mult-choice-8").append(triviaQuestion[7].multipleChoice[i] + "<br/>")
         }
         $(".q8-content").toggle()
     });
@@ -160,7 +162,7 @@ $(document).ready(function() {
         $(".q-9").html(triviaQuestion[8].question);
         $("#mult-choice-9").empty()
         for (i = 0; i < triviaQuestion[8].multipleChoice.length; i ++) {
-            $("#mult-choice-9").append("<br/>" + triviaQuestion[8].multipleChoice[i])
+            $("#mult-choice-9").append(triviaQuestion[8].multipleChoice[i] + "<br/>")
         }
         $(".q9-content").toggle()
     });
@@ -170,7 +172,7 @@ $(document).ready(function() {
         $(".q-10").html(triviaQuestion[9].question);
         $("#mult-choice-10").empty()
         for (i = 0; i < triviaQuestion[9].multipleChoice.length; i ++) {
-            $("#mult-choice-10").append("<br/>" + triviaQuestion[9].multipleChoice[i])
+            $("#mult-choice-10").append(triviaQuestion[9].multipleChoice[i] + "<br/>")
         }
         $(".q10-content").toggle()
     });
