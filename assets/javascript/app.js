@@ -6,7 +6,7 @@ $(document).ready(function() {
         after meeting Ted where?`,
         multipleChoice: [`At a Urinal`, `At GNB`, `At University`,
         `At a wedding`],
-        correctChoice: 0 },
+        correctChoice: 0},
 
     {   /*1*/
         question: `What kind of instrument did Ted steal for Robin?`,
@@ -49,25 +49,36 @@ $(document).ready(function() {
         multipleChoice: [`Thighs`, `Abs`, `Calves`, `Arms`],
         correctChoice: 2},
 
-    {   /*9*/
-        question: `Barney's real father was a _______ when he was younger`,
-        multipleChoice: [`Teacher`, `Game Show Host`, `Professional Magician`, `Rock Star`],
-        correctChoice: 3},
 
-    {   /*10*/
+    {   /*9*/
         question: `What show host does Barney think is his father?`,
-        multipleChoice: [`Bob Barker,`, `Alex Trebek`, `Steve Harvey`, `Dick Clark`],
+        multipleChoice: [`Bob Barker`, `Alex Trebek`, `Steve Harvey`, `Dick Clark`],
         correctChoice: 0},
 
 ]
     
     var correctCount = 0;
     var incorrectCount = 0;
-    var count = 30;
+    var count = 31;
+    var intervalID;
+    
+    function run() {
+        decrement();
+        intervalID = setInterval(decrement, 1000);
+    }
 
-    //Timer Function 
-    function timer() {
+    function decrement() {
         count --;
+        $(".timer-1").html("<h3>" + count + "</h3>");
+
+        if (count === 0) {
+            stop();
+            /* If count === 0 with no user input, increment incorrectCount up 1*/
+        }
+
+    function stop() {
+        clearInterval(intervalID);
+    }
     }
 
 
@@ -75,13 +86,35 @@ $(document).ready(function() {
     $("#btn1").on("click", function() {
         // alert("You have clicked a button!")
         $(".q-1").html(triviaQuestion[0].question);
+        var correctAnswer = triviaQuestion[0].multipleChoice[0];
         $("#mult-choice-1").empty()
-        for (i = 0; i < triviaQuestion[0].multipleChoice.length; i ++) {
-            var choiceButton = $("<button>");
-            choiceButton.text(triviaQuestion[0].multipleChoice[i]);
-            $("#mult-choice-1").append(choiceButton);
-            // $("#mult-choice-1").append(triviaQuestion[0].multipleChoice[i] + "<br/>")
-        }
+            for (i = 0; i < triviaQuestion[0].multipleChoice.length; i ++) {
+                var choiceButton = $("<button>");
+
+                choiceButton.text(triviaQuestion[0].multipleChoice[i]);
+                $("#mult-choice-1").append(choiceButton);
+                
+                //store button value
+                ans = triviaQuestion[0].multipleChoice[i];
+                console.log(choiceButton);
+            }
+            run();
+        });
+
+        $("#mult-choice-1 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q1-content").toggle()
     });
 
@@ -90,8 +123,25 @@ $(document).ready(function() {
         $(".q-2").html(triviaQuestion[1].question);
         $("#mult-choice-2").empty()
         for (i = 0; i < triviaQuestion[1].multipleChoice.length; i ++) {
-            $("#mult-choice-2").append(triviaQuestion[1].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[1].multipleChoice[i]);
+            $("#mult-choice-2").append(choiceButton)
         }
+        run();
+        $("#mult-choice-2 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q2-content").toggle()
     });
 
@@ -100,8 +150,25 @@ $(document).ready(function() {
         $(".q-3").html(triviaQuestion[2].question);
         $("#mult-choice-3").empty()
         for (i = 0; i < triviaQuestion[2].multipleChoice.length; i ++) {
-            $("#mult-choice-3").append(triviaQuestion[2].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[2].multipleChoice[i]);
+            $("#mult-choice-3").append(choiceButton)
         }
+        run();
+        $("#mult-choice-3 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q3-content").toggle()
     });
 
@@ -110,8 +177,25 @@ $(document).ready(function() {
         $(".q-4").html(triviaQuestion[3].question);
         $("#mult-choice-4").empty()
         for (i = 0; i < triviaQuestion[3].multipleChoice.length; i ++) {
-            $("#mult-choice-4").append(triviaQuestion[3].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[3].multipleChoice[i]);
+            $("#mult-choice-4").append(choiceButton)
         }
+        run();
+        $("#mult-choice-4 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q4-content").toggle()
     });
 
@@ -120,8 +204,25 @@ $(document).ready(function() {
         $(".q-5").html(triviaQuestion[4].question);
         $("#mult-choice-5").empty()
         for (i = 0; i < triviaQuestion[4].multipleChoice.length; i ++) {
-            $("#mult-choice-5").append(triviaQuestion[4].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[4].multipleChoice[i]);
+            $("#mult-choice-5").append(choiceButton)
         }
+        run();
+        $("#mult-choice-5 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q5-content").toggle()
     });
 
@@ -130,8 +231,25 @@ $(document).ready(function() {
         $(".q-6").html(triviaQuestion[5].question);
         $("#mult-choice-6").empty()
         for (i = 0; i < triviaQuestion[5].multipleChoice.length; i ++) {
-            $("#mult-choice-6").append(triviaQuestion[5].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[5].multipleChoice[i]);
+            $("#mult-choice-6").append(choiceButton)
         }
+        run();
+        $("#mult-choice-6 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q6-content").toggle()
         console.log(triviaQuestion[5]);
     });
@@ -141,8 +259,25 @@ $(document).ready(function() {
         $(".q-7").html(triviaQuestion[6].question);
         $("#mult-choice-7").empty()
         for (i = 0; i < triviaQuestion[6].multipleChoice.length; i ++) {
-            $("#mult-choice-7").append(triviaQuestion[6].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[6].multipleChoice[i]);
+            $("#mult-choice-7").append(choiceButton)
         }
+        run();
+        $("#mult-choice-7 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $("q7-content").toggle()
         console.log(triviaQuestion[6]);
     });
@@ -152,8 +287,25 @@ $(document).ready(function() {
         $("q-8").html(triviaQuestion[7].question);
         $("#mult-choice-8").empty()
         for (i = 0; i < triviaQuestion[7].multipleChoice.length; i ++) {
-            $("#mult-choice-8").append(triviaQuestion[7].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[7].multipleChoice[i]);
+            $("#mult-choice-8").append(choiceButton)
         }
+        run();
+        $("#mult-choice-8 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q8-content").toggle()
     });
 
@@ -162,8 +314,25 @@ $(document).ready(function() {
         $(".q-9").html(triviaQuestion[8].question);
         $("#mult-choice-9").empty()
         for (i = 0; i < triviaQuestion[8].multipleChoice.length; i ++) {
-            $("#mult-choice-9").append(triviaQuestion[8].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[8].multipleChoice[i]);
+            $("#mult-choice-9").append(choiceButton)
         }
+        run();
+        $("#mult-choice-9 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q9-content").toggle()
     });
 
@@ -172,10 +341,24 @@ $(document).ready(function() {
         $(".q-10").html(triviaQuestion[9].question);
         $("#mult-choice-10").empty()
         for (i = 0; i < triviaQuestion[9].multipleChoice.length; i ++) {
-            $("#mult-choice-10").append(triviaQuestion[9].multipleChoice[i] + "<br/>")
+            var choiceButton = $("<button>");
+            choiceButton.text(triviaQuestion[9].multipleChoice[i]);
+            $("#mult-choice-10").append(choiceButton)
         }
+        run();
+        $("#mult-choice-10 > button").on("click", function() {
+            /*
+            reference button value and run and if statement to match button value with correctAnswer
+                if values match, prepend images to #mult-choice-x
+                    increment correctCount up 1
+                    $("").html() to .correctAnswers
+            */
+
+            /* 
+                else statement
+                increment incorrectCount up 1
+                $("").html() to .incorrectAnswers
+            */
+            });
         $(".q10-content").toggle()
     });
-
-
-});

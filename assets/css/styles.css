@@ -123,13 +123,12 @@ header {
 
 /* Dropdown on-click */
 .question-content {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-}
-
-#btn10 {
-    margin-bottom: 15px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 /* .question button:hover {
