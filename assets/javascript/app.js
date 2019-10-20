@@ -69,7 +69,7 @@ $(document).ready(function() {
 
     function decrement() {
         count --;
-        $(".timer-1").html("<h3>" + count + "</h3>");
+        $(".timer").html("<h3>" + "Time Remaining:" + count + "</h3>");
 
         if (count === 0) {
             stop();
@@ -98,9 +98,6 @@ $(document).ready(function() {
                 ans = triviaQuestion[0].multipleChoice[i];
                 console.log(choiceButton);
             }
-            run();
-        });
-
         $("#mult-choice-1 > button").on("click", function() {
             /*
             reference button value and run and if statement to match button value with correctAnswer
@@ -115,7 +112,9 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q1-content").toggle()
+        $("#q1").toggle()
+        clearInterval(intervalID);
+        run();
     });
 
     $("#btn2").on("click", function() {
@@ -127,6 +126,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[1].multipleChoice[i]);
             $("#mult-choice-2").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-2 > button").on("click", function() {
             /*
@@ -142,7 +142,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q2-content").toggle()
+        $("#q2").toggle()
     });
 
     $("#btn3").on("click", function() {
@@ -154,6 +154,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[2].multipleChoice[i]);
             $("#mult-choice-3").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-3 > button").on("click", function() {
             /*
@@ -169,7 +170,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q3-content").toggle()
+        $("#q3").toggle()
     });
 
     $("#btn4").on("click", function() {
@@ -181,6 +182,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[3].multipleChoice[i]);
             $("#mult-choice-4").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-4 > button").on("click", function() {
             /*
@@ -196,7 +198,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q4-content").toggle()
+        $("#q4").toggle()
     });
 
     $("#btn5").on("click", function() {
@@ -208,6 +210,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[4].multipleChoice[i]);
             $("#mult-choice-5").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-5 > button").on("click", function() {
             /*
@@ -223,7 +226,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q5-content").toggle()
+        $("#q5").toggle()
     });
 
     $("#btn6").on("click", function() {
@@ -235,6 +238,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[5].multipleChoice[i]);
             $("#mult-choice-6").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-6 > button").on("click", function() {
             /*
@@ -250,7 +254,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q6-content").toggle()
+        $("#q6").toggle()
         console.log(triviaQuestion[5]);
     });
 
@@ -263,6 +267,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[6].multipleChoice[i]);
             $("#mult-choice-7").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-7 > button").on("click", function() {
             /*
@@ -278,7 +283,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $("q7-content").toggle()
+        $("#q7").toggle()
         console.log(triviaQuestion[6]);
     });
 
@@ -291,6 +296,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[7].multipleChoice[i]);
             $("#mult-choice-8").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-8 > button").on("click", function() {
             /*
@@ -306,7 +312,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q8-content").toggle()
+        $("#q8").toggle()
     });
 
     $("#btn9").on("click", function() {
@@ -318,6 +324,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[8].multipleChoice[i]);
             $("#mult-choice-9").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-9 > button").on("click", function() {
             /*
@@ -333,7 +340,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q9-content").toggle()
+        $("#q9").toggle()
     });
 
     $("#btn10").on("click", function() {
@@ -345,6 +352,7 @@ $(document).ready(function() {
             choiceButton.text(triviaQuestion[9].multipleChoice[i]);
             $("#mult-choice-10").append(choiceButton)
         }
+        clearInterval(intervalID);
         run();
         $("#mult-choice-10 > button").on("click", function() {
             /*
@@ -360,5 +368,7 @@ $(document).ready(function() {
                 $("").html() to .incorrectAnswers
             */
             });
-        $(".q10-content").toggle()
+        $("#q10").toggle()
     });
+
+});
